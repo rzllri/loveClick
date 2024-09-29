@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website dengan Musik</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<style>button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+</style>
+    <button id="play-button">Klik untuk Memutar Musik</button>
+    <audio id="background-music" autoplay loop>
+        <source src="music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <h1>Selamat datang di website Rizal</h1>
+    <p>Nikmati musik sambil menjelajahi website ini!</p>
+
+    <script>
+    document.getElementById('play-button').addEventListener('click', function() {
+    var music = document.getElementById('background-music');
+    music.play().catch(error => {
+        console.log("Failed to play music:", error);
+        });
+        });
+    </script>
+</body>
+</html>
